@@ -1,0 +1,50 @@
+"*":
+  core:
+    followSymlinks: false
+    hideGitIgnoredFiles: false
+    ignoredNames: [
+      ".git"
+      ".DS_Store"
+      "*.crt"
+      "*.key"
+    ]
+    telemetryConsent: "no"
+    themes: [
+      "one-dark-ui"
+      "ariake-dark-syntax"
+    ]
+  editor:
+    fontFamily: "Menlo"
+    invisibles: {}
+    showIndentGuide: true
+    showInvisibles: true
+    softWrap: true
+    tabType: "soft"
+  "exception-reporting":
+    userId: "8a1fa52e-1a87-48bf-9a07-f33b44526c41"
+  "file-icons":
+    coloured: false
+  "highlight-line":
+    enableBackgroundColor: false
+    enableSelectionBorder: true
+  "linter-eslint":
+    fixOnSave: true
+  "linter-ui-default":
+    showPanel: true
+  pigments:
+    sortPaletteColors: "by color"
+  "spell-check":
+    grammars: [
+      "text.plain"
+      "source.gfm"
+      "text.git-commit"
+      "text.html.basic"
+    ]
+  "tree-view":
+    hideIgnoredNames: true
+    hideVcsIgnoredFiles: true
+  welcome:
+    showOnStartup: false
+".html.php.text":
+  editor:
+    tabLength: 4

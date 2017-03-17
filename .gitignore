@@ -1,0 +1,11 @@
+config/fish/fishd*
+config/fish/functions
+config/fish/completions
+
+config/omf/channel
+
+atom.symlink/*
+!atom.symlink/config.cson
+!atom.symlink/packages.txt
+
+iterm/com.googlecode.iterm2.plist
