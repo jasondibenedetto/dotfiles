@@ -1,9 +1,5 @@
 #!/bin/sh
 
-sed "s|$HOME|r_str|g" \
-  "$DOTFILES/iterm/com.googlecode.iterm2.plist.example" > \
-  "$DOTFILES/iterm/com.googlecode.iterm2.plist"
-
+# load iterm preferences from custom folder
 defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string "$DOTFILES/iterm"
-
 defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true

@@ -1,11 +1,9 @@
-config/fish/fishd*
-config/fish/functions
-config/fish/completions
+fish/.config/fish/fishd*
+fish/.config/fish/conf.d
+fish/.config/fish/functions
+fish/.config/fish/completions/*
+!fish/.config/fish/completions/fisher.fish
 
-config/omf/channel
-
-atom.symlink/*
-!atom.symlink/config.cson
-!atom.symlink/packages.txt
-
-iterm/com.googlecode.iterm2.plist
+atom/.atom/*
+!atom/.atom/config.cson
+!atom/.atom/packages.txt
