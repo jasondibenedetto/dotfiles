@@ -40,6 +40,8 @@
       "text.git-commit"
       "text.html.basic"
     ]
+  "tabs-to-spaces":
+    onSave: "untabify"
   "tree-view":
     hideIgnoredNames: true
   welcome:
