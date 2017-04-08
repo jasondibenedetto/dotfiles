@@ -6,7 +6,8 @@ tap 'homebrew/homebrew-php'
 tap 'caskroom/versions'
 tap 'fisherman/tap'
 
-brew 'coreutils'
+brew 'bash'
+brew 'coreutils', args: ['with-default-names']
 brew 'findutils'
 brew 'fish'
 brew 'fisherman'
@@ -14,16 +15,19 @@ brew 'fzf'
 brew 'git'
 brew 'gnu-sed', args: ['with-default-names']
 brew 'grep', args: ['with-default-names']
-brew 'moreutils'
+brew 'less'
+brew 'moreutils', args: ['with-default-names']
+brew 'nano'
 brew 'node'
 brew 'openssh'
 brew 'php-code-sniffer'
+brew 'python'
 brew 'rbenv'
 brew 'rsync'
 brew 'stow'
 brew 'swiftlint'
 brew 'the_silver_searcher'
-brew 'vim'
+brew 'vim' , args: ['--override-system-vi']
 brew 'wget'
 brew 'yarn'
 brew 'z'
