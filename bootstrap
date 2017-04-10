@@ -6,7 +6,7 @@ end=$'\e[0m'
 bld=$'\e[1m'
 dim=$'\e[2m'
 
-symlinks=(atom bin fish npm git homebrew)
+symlinks=(atom bin fish npm git homebrew vim)
 
 hydrate() {
   for src in ${symlinks[@]}; do
@@ -27,6 +27,6 @@ while true; do
 done
 
 hydrate
-brew bundle --file=$HOME/Brewfile
+brew bundle --file=$HOME/.Brewfile
 
 printf "${mag}[done]${end} 🏄🏽"
