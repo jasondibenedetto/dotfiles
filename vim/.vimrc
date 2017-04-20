@@ -14,13 +14,10 @@ Plug 'bling/vim-airline'
 Plug 'tpope/vim-fugitive'
 Plug 'kien/ctrlp.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'scrooloose/syntastic'
 
 " initialize plugin system
 call plug#end()
-
-" NERDTree settings
-let NERDTreeShowHidden=1
-autocmd vimenter * NERDTree
 
 " set standard encoding
 scriptencoding utf-8
@@ -49,6 +46,11 @@ set gcr=a:blinkon0
 
 " no sounds
 set visualbell
+
+" turn backup off
+set nobackup
+set nowb
+set noswapfile
 
 " reload files changed outside vim
 set autoread
@@ -91,3 +93,19 @@ set sidescroll=1
 
 " syntax theme
 colorscheme nord
+
+"·NERDTree¬
+let NERDTreeShowHidden=1
+autocmd vimenter * NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q |·endif
+
+"·Syntastic¬
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_check_on_open=1
+let g:syntastic_check_on_wq=0
+let g:syntastic_javascript_checkers=['eslint']
+let g:syntastic_scss_checkers=['scss_lint']
