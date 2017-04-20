@@ -1,3 +1,31 @@
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/.vim/plugins')
+
+Plug 'pangloss/vim-javascript'
+Plug 'arcticicestudio/nord-vim'
+Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-surround'
+Plug 'bling/vim-airline'
+Plug 'tpope/vim-fugitive'
+Plug 'kien/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
+
+" initialize plugin system
+call plug#end()
+
+" NERDTree settings
+let NERDTreeShowHidden=1
+autocmd vimenter * NERDTree
+
+" set standard encoding
+scriptencoding utf-8
+set encoding=utf-8
+
 " use vim settings, rather then vi settings
 set nocompatible
 
@@ -48,7 +76,7 @@ filetype plugin on
 filetype indent on
 
 " display tabs and trailing spaces visually
-set list listchars=tab:\ \ ,trail:·
+set list listchars=eol:¬,tab:»»,trail:·,extends:>,precedes:<,space:·
 
 " don't wrap lines
 set nowrap
@@ -60,3 +88,6 @@ set linebreak
 set scrolloff=8
 set sidescrolloff=15
 set sidescroll=1
+
+" syntax theme
+colorscheme nord

@@ -7,3 +7,6 @@ fish/.config/fish/completions/*
 atom/.atom/*
 !atom/.atom/config.cson
 !atom/.atom/packages.txt
+
+vim/.vim/plugins/*
+vim/.vim/autoload/*
