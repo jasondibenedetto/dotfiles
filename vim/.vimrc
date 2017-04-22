@@ -1,105 +1,40 @@
+" tab options
+set shiftwidth=2
+set tabstop=2
+
+" {{{ plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
 endif
 
 call plug#begin('~/.vim/plugins')
-
-Plug 'pangloss/vim-javascript'
-Plug 'arcticicestudio/nord-vim'
-Plug 'scrooloose/nerdtree'
-Plug 'tpope/vim-surround'
-Plug 'bling/vim-airline'
-Plug 'tpope/vim-fugitive'
-Plug 'kien/ctrlp.vim'
-Plug 'airblade/vim-gitgutter'
-Plug 'scrooloose/syntastic'
-
-" initialize plugin system
+  Plug '/usr/local/opt/fzf' | Plug 'junegunn/fzf.vim'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'ap/vim-css-color', { 'for': 'scss' }
+  Plug 'arcticicestudio/nord-vim'
+  Plug 'bronson/vim-trailing-whitespace'
+  Plug 'dag/vim-fish', { 'for': 'fish' }
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+  Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+  Plug 'scrooloose/nerdcommenter'
+  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+  Plug 'scrooloose/syntastic'
+  Plug 'terryma/vim-multiple-cursors'
+  Plug 'tpope/vim-fugitive'
+  Plug 'tpope/vim-sensible'
+  Plug 'tpope/vim-sleuth'
+  Plug 'tpope/vim-surround'
+  Plug 'Valloric/MatchTagAlways', { 'for': 'html' }
+  Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-complete' }
+  Plug 'vim-airline/vim-airline'
 call plug#end()
+" }}}
 
-" set standard encoding
-scriptencoding utf-8
-set encoding=utf-8
+" {{{ plugin settings
+map <C-n> :NERDTreeToggle<CR>
 
-" use vim settings, rather then vi settings
-set nocompatible
-
-" line numbers are good
-set number
-
-" allow backspace in insert mode
-set backspace=indent,eol,start
-
-" store lots of :cmdline history
-set history=1000
-
-" show incomplete cmds down the bottom
-set showcmd
-
-" show current mode down the bottom
-set showmode
-
-" disable cursor blink
-set gcr=a:blinkon0
-
-" no sounds
-set visualbell
-
-" turn backup off
-set nobackup
-set nowb
-set noswapfile
-
-" reload files changed outside vim
-set autoread
-
-" this makes vim act like all other editors
-set hidden
-
-" turn on syntax highlighting
-syntax on
-
-" indentation
-set autoindent
-set smartindent
-set smarttab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-set expandtab
-
-" auto indent pasted text
-nnoremap p p=`]<C-o>
-nnoremap P P=`]<C-o>
-
-filetype plugin on
-filetype indent on
-
-" display tabs and trailing spaces visually
-set list listchars=eol:¬,tab:»»,trail:·,extends:>,precedes:<,space:·
-
-" don't wrap lines
-set nowrap
-
-" wrap lines at convenient points
-set linebreak
-
-" scrolling
-set scrolloff=8
-set sidescrolloff=15
-set sidescroll=1
-
-" syntax theme
-colorscheme nord
-
-"·NERDTree¬
-let NERDTreeShowHidden=1
-autocmd vimenter * NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q |·endif
-
-"·Syntastic¬
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -109,3 +44,76 @@ let g:syntastic_check_on_open=1
 let g:syntastic_check_on_wq=0
 let g:syntastic_javascript_checkers=['eslint']
 let g:syntastic_scss_checkers=['scss_lint']
+
+let g:jsx_ext_required = 0
+" }}}
+
+" {{{ Misc
+" set title and allow hidden buffers
+set title
+set hidden
+set list
+set listchars=tab:»\ ,space:·,trail:·,eol:¬,nbsp:_,extends:>,precedes:<
+
+" auto remove all trailing whitespace on :w
+autocmd BufWritePre * :%s/\s\+$//e
+
+" autosave files when focus is lost
+:au FocusLost * :wa
+
+" Line Numbers
+set number
+set numberwidth=3
+
+" path will be base dir that vim is opened from
+set path=$PWD/**
+
+set nomodeline
+set noshowmode
+set shortmess=atToOI
+set undolevels=1000
+set updatetime=1500
+
+" wild menu (autocompletion)"
+set wildignore=.svn,CVS,.git,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.jpeg,*.png,*.xpm,*.gif
+set wildmode=list:longest,full
+
+" backup and swap
+set nobackup
+set nowritebackup
+set noswapfile
+
+" search options
+set hlsearch
+set magic
+set ignorecase
+set smartcase
+
+" folding
+set foldenable
+set foldmethod=marker
+set foldlevel=0
+set foldcolumn=0
+
+colorscheme nord
+
+set encoding=utf-8
+
+set mouse=a
+set showmatch
+set cursorline
+set scrolljump=10
+set ttyfast
+set pumheight=20
+set diffopt+=context:3
+set nostartofline
+set visualbell
+
+set wrap
+set linebreak
+set smartindent
+
+set splitbelow
+set splitright
+" }}}
+
