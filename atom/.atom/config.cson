@@ -1,12 +1,10 @@
 "*":
   core:
+    closeDeletedFileTabs: true
     followSymlinks: false
     hideGitIgnoredFiles: false
     ignoredNames: [
-      ".git"
       ".DS_Store"
-      "*.crt"
-      "*.key"
     ]
     telemetryConsent: "no"
     themes: [
@@ -22,8 +20,6 @@
     tabType: "soft"
   "exception-reporting":
     userId: "8a1fa52e-1a87-48bf-9a07-f33b44526c41"
-  "file-icons":
-    coloured: false
   "fuzzy-finder":
     ignoredNames: [
       "node_modules"
@@ -37,6 +33,7 @@
     fixOnSave: true
   "linter-ui-default":
     showPanel: true
+  "one-dark-ui": {}
   pigments:
     sortPaletteColors: "by color"
   "spell-check":
@@ -50,6 +47,7 @@
     onSave: "untabify"
   "tree-view":
     hideIgnoredNames: true
+    squashDirectoryNames: true
   welcome:
     showOnStartup: false
 ".html.php.text":

@@ -103,4 +103,3 @@ set splitbelow
 set splitright
 set visualbell
 " }}}
-

@@ -12,3 +12,6 @@ source "$FISH/aliases.fish"
 
 # paths
 source "$FISH/paths.fish"
+
+# local
+source "$FISH/local.fish"
