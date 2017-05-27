@@ -1,0 +1,7 @@
+#!/bin/sh
+
+# load iterm preferences from custom folder
+(cd ../data &&
+  defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string $PWD
+  defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
+)

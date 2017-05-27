@@ -1,6 +1,3 @@
-# .bin
-set -g fish_user_paths $fish_user_paths "$HOME/.local/bin"
-
 # brew
 set -g fish_user_paths $fish_user_paths '/usr/local/sbin'
 

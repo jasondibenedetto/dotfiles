@@ -1,7 +1,7 @@
 # dotfiles
 
 ```bash
-git clone https://github.com/jasondibenedetto/dotfiles.git && cd dotfiles && ./bootstrap
+git clone https://github.com/jasondibenedetto/dotfiles.git && cd dotfiles && ./install
 ```
 
 🏄🏽

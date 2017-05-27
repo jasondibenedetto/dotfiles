@@ -6,12 +6,10 @@ end=$'\e[0m'
 bld=$'\e[1m'
 dim=$'\e[2m'
 
-symlinks=(atom bin fish npm git homebrew vim)
-
 hydrate() {
-  for src in ${symlinks[@]}; do
-    stow --restow --target=$HOME $src
-    printf "${dim}[link]${end} $src\n"
+  for pkg in `ls src`; do
+    (cd src && stow --target=$HOME $pkg)
+    printf "${dim}[link]${end} $pkg\n"
   done
 }
 
@@ -27,6 +25,5 @@ while true; do
 done
 
 hydrate
-brew bundle --file=$HOME/.Brewfile
 
 printf "${mag}[done]${end} 🏄🏽"

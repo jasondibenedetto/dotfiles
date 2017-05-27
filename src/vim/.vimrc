@@ -9,9 +9,9 @@ call plug#begin('~/.vim/plugins')
   Plug 'airblade/vim-gitgutter'
   Plug 'ap/vim-css-color', { 'for': 'scss' }
   Plug 'arcticicestudio/nord-vim'
-  Plug 'bronson/vim-trailing-whitespace'
   Plug 'jiangmiao/auto-pairs'
   Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+  Plug 'ntpeters/vim-better-whitespace'
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
   Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'scrooloose/syntastic'
@@ -22,7 +22,6 @@ call plug#begin('~/.vim/plugins')
   Plug 'Valloric/MatchTagAlways', { 'for': 'html' }
   Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
   Plug 'vim-airline/vim-airline'
-  Plug 'whatyouhide/vim-lengthmatters'
 call plug#end()
 " }}}
 

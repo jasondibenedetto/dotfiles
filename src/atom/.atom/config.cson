@@ -1,4 +1,5 @@
 "*":
+  "bracket-matcher": {}
   core:
     closeDeletedFileTabs: true
     followSymlinks: false
@@ -6,6 +7,7 @@
     ignoredNames: [
       ".DS_Store"
     ]
+    projectHome: "/Users/jason/code"
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
@@ -20,6 +22,7 @@
     tabType: "soft"
   "exception-reporting":
     userId: "8a1fa52e-1a87-48bf-9a07-f33b44526c41"
+  "flow-ide": {}
   "fuzzy-finder":
     ignoredNames: [
       "node_modules"
@@ -32,7 +35,7 @@
   "linter-eslint":
     fixOnSave: true
   "linter-ui-default":
-    showPanel: true
+    panelHeight: 69
   "one-dark-ui": {}
   pigments:
     sortPaletteColors: "by color"
@@ -43,6 +46,7 @@
       "text.git-commit"
       "text.html.basic"
     ]
+  tabs: {}
   "tabs-to-spaces":
     onSave: "untabify"
   "tree-view":
@@ -50,6 +54,8 @@
     squashDirectoryNames: true
   welcome:
     showOnStartup: false
+  whitespace:
+    ignoreWhitespaceOnlyLines: true
 ".html.php.text":
   editor:
     tabLength: 4
