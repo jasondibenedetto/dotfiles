@@ -11,3 +11,7 @@ src/atom/.atom/*
 
 src/vim/.vim/plugins/*
 src/vim/.vim/autoload/*
+
+src/yarn/.config/yarn/global/*
+src/yarn/.config/yarn/link/*
+!src/yarn/.config/yarn/global/package.json

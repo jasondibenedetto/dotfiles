@@ -1,12 +1,10 @@
 fisherman/await
-edc/bass
+oh-my-fish/plugin-direnv
 fisherman/fzf
 fisherman/get
 fisherman/getopts
-fisherman/grc
 fisherman/last_job_id
 rafaelrinaldi/pure
 fisherman/rbenv
 tuvistavie/fish-ssh-agent
-oh-my-fish/plugin-thefuck
 fisherman/z

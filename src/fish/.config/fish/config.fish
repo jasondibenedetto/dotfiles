@@ -8,6 +8,8 @@ source "$HOME/.config/fish/aliases.fish"
 source "$HOME/.config/fish/paths.fish"
 
 # local
-if test -f "$HOME/.config/fish/local.fish"
-  source "$HOME/.config/fish/local.fish"
+set -l local "$HOME/.config/fish/local.fish"
+
+if test -f $local
+  source $local
 end

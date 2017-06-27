@@ -32,13 +32,19 @@
   "highlight-line":
     enableBackgroundColor: false
     enableSelectionBorder: true
-  "linter-eslint":
-    fixOnSave: true
   "linter-ui-default":
     panelHeight: 69
   "one-dark-ui": {}
   pigments:
     sortPaletteColors: "by color"
+  "prettier-atom":
+    formatOnSaveOptions:
+      enabled: true
+    prettierOptions:
+      singleQuote: true
+      trailingComma: "all"
+    useEditorConfig: false
+    useEslint: true
   "spell-check":
     grammars: [
       "text.plain"
@@ -51,7 +57,6 @@
     onSave: "untabify"
   "tree-view":
     hideIgnoredNames: true
-    squashDirectoryNames: true
   welcome:
     showOnStartup: false
   whitespace:

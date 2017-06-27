@@ -8,6 +8,7 @@ tap 'fisherman/tap'
 
 brew 'bash'
 brew 'coreutils', args: ['with-default-names']
+brew 'direnv'
 brew 'findutils'
 brew 'fish'
 brew 'fisherman'
