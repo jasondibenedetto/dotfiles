@@ -1,11 +1,11 @@
 cask_args appdir: '/Applications'
 
-tap 'homebrew/bundle'
-tap 'homebrew/dupes'
-tap 'homebrew/homebrew-php'
+#taps
 tap 'caskroom/versions'
+tap 'caskroom/fonts'
 tap 'fisherman/tap'
 
+# formulas
 brew 'bash'
 brew 'coreutils', args: ['with-default-names']
 brew 'direnv'
@@ -21,7 +21,6 @@ brew 'moreutils', args: ['with-default-names']
 brew 'nano'
 brew 'node'
 brew 'openssh'
-brew 'php-code-sniffer'
 brew 'python'
 brew 'rbenv'
 brew 'rsync'
@@ -33,9 +32,11 @@ brew 'wget'
 brew 'yarn'
 brew 'z'
 
+# casks
 cask 'atom'
+cask 'font-hack'
+cask 'iterm2-beta'
 cask 'flux'
 cask 'google-chrome'
-cask 'iterm2-beta'
 cask 'keepingyouawake'
 cask 'spectacle'

@@ -1,8 +1,8 @@
 {
   "dependencies": {
+    "@jasondibenedetto/plop": "^0.0.2",
     "eslint-cli": "^1.1.0",
     "grunt-cli": "^1.2.0",
-    "prettier": "^1.4.4",
     "prettier-eslint-cli": "^4.1.1",
     "react-native-cli": "^2.0.1"
   }

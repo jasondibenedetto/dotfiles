@@ -13,21 +13,17 @@ call plug#begin('~/.vim/plugins')
   Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-  Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
   Plug 'scrooloose/syntastic'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
   Plug 'Valloric/MatchTagAlways', { 'for': 'html' }
-  Plug 'Valloric/YouCompleteMe', { 'do': './install.py' }
   Plug 'vim-airline/vim-airline'
 call plug#end()
 " }}}
 
 " {{{ plugin settings
-map <C-n> :NERDTreeToggle<CR>
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*

@@ -11,10 +11,10 @@
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
-      "ariake-dark-syntax"
+      "tone-syntax"
     ]
   editor:
-    fontFamily: "Menlo"
+    fontFamily: "Hack"
     invisibles: {}
     showIndentGuide: true
     showInvisibles: true
@@ -55,6 +55,12 @@
   tabs: {}
   "tabs-to-spaces":
     onSave: "untabify"
+  "tone-syntax":
+    color:
+      duo: "#b06845"
+      syncUI: false
+      tri: "#8686cb"
+      uno: "#bebeef"
   "tree-view":
     hideIgnoredNames: true
   welcome:

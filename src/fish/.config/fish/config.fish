@@ -13,3 +13,6 @@ set -l local "$HOME/.config/fish/local.fish"
 if test -f $local
   source $local
 end
+
+# theme
+set pure_symbol_prompt '→'
