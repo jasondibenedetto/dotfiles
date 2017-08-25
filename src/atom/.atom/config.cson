@@ -2,6 +2,9 @@
   "bracket-matcher": {}
   core:
     closeDeletedFileTabs: true
+    disabledPackages: [
+      "github"
+    ]
     followSymlinks: false
     hideGitIgnoredFiles: false
     ignoredNames: [
@@ -11,7 +14,7 @@
     telemetryConsent: "no"
     themes: [
       "one-dark-ui"
-      "tone-syntax"
+      "nord-atom-syntax"
     ]
   editor:
     fontFamily: "Hack"
@@ -34,12 +37,15 @@
     enableSelectionBorder: true
   "linter-ui-default":
     panelHeight: 69
+  "nord-atom-ui": {}
   "one-dark-ui": {}
   pigments:
     sortPaletteColors: "by color"
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
+      isDisabledIfNotInPackageJson: true
+      showInStatusBar: true
     prettierOptions:
       singleQuote: true
       trailingComma: "all"
@@ -53,14 +59,6 @@
       "text.html.basic"
     ]
   tabs: {}
-  "tabs-to-spaces":
-    onSave: "untabify"
-  "tone-syntax":
-    color:
-      duo: "#b06845"
-      syncUI: false
-      tri: "#8686cb"
-      uno: "#bebeef"
   "tree-view":
     hideIgnoredNames: true
   welcome:
