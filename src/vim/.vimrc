@@ -1,18 +1,21 @@
-" {{{ plugins
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall
 endif
 
+" plugins
 call plug#begin('~/.vim/plugins')
   Plug 'airblade/vim-gitgutter'
   Plug 'ap/vim-css-color', { 'for': 'scss' }
   Plug 'arcticicestudio/nord-vim'
   Plug 'jiangmiao/auto-pairs'
+  Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+  Plug 'prettier/vim-prettier', { 'for': ['javascript.jsx', 'scss', 'json'] }
+  Plug 'scrooloose/nerdtree'
   Plug 'scrooloose/syntastic'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-fugitive'
@@ -20,10 +23,10 @@ call plug#begin('~/.vim/plugins')
   Plug 'tpope/vim-surround'
   Plug 'Valloric/MatchTagAlways', { 'for': 'html' }
   Plug 'vim-airline/vim-airline'
+  Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
-" }}}
 
-" {{{ plugin settings
+" plugin settings
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -31,11 +34,14 @@ set statusline+=%*
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
 let g:syntastic_javascript_checkers=['eslint']
-let g:syntastic_scss_checkers=['scss_lint']
 let g:jsx_ext_required=0
-" }}}
 
-" {{{ misc
+let NERDTreeShowHidden=1
+let NERDTreeMouseMode=2
+let NERDTreeMinimalUI=1
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+
 " theme
 colorscheme nord
 
@@ -97,4 +103,4 @@ set showmatch
 set splitbelow
 set splitright
 set visualbell
-" }}}
+
