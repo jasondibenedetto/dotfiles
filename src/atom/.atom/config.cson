@@ -1,14 +1,44 @@
 "*":
-  "bracket-matcher": {}
+  "command-palette":
+    preserveLastSearch: true
   core:
     closeDeletedFileTabs: true
     disabledPackages: [
-      "github"
+      "welcome"
+      "styleguide"
+      "language-mustache"
+      "language-perl"
+      "language-ruby"
+      "language-ruby-on-rails"
+      "language-go"
+      "language-csharp"
+      "language-clojure"
+      "language-c"
+      "image-view"
+      "background-tips"
+      "autocomplete-snippets"
+      "language-less"
+      "language-make"
+      "language-python"
+      "language-toml"
+      "language-typescript"
+      "metrics"
+      "package-generator"
+      "snippets"
+      "language-sql"
+      "exception-reporting"
     ]
     followSymlinks: false
     hideGitIgnoredFiles: false
     ignoredNames: [
       ".DS_Store"
+    ]
+    packagesWithKeymapsDisabled: [
+      "atom-ternjs"
+      "hyperclick"
+      "merge-conflicts"
+      "split-diff"
+      "styleguide"
     ]
     projectHome: "/Users/jason/code"
     telemetryConsent: "no"
@@ -16,6 +46,7 @@
       "one-dark-ui"
       "nord-atom-syntax"
     ]
+    titleBar: "custom"
   editor:
     fontFamily: "Hack"
     invisibles: {}
@@ -25,7 +56,6 @@
     tabType: "soft"
   "exception-reporting":
     userId: "8a1fa52e-1a87-48bf-9a07-f33b44526c41"
-  "flow-ide": {}
   "fuzzy-finder":
     ignoredNames: [
       "node_modules"
@@ -35,22 +65,28 @@
   "highlight-line":
     enableBackgroundColor: false
     enableSelectionBorder: true
+  "linter-eslint":
+    fixOnSave: true
   "linter-ui-default":
     panelHeight: 69
-  "nord-atom-ui": {}
-  "one-dark-ui": {}
+  "no-title-bar":
+    automaticTrafficLightsPadding: true
   pigments:
     sortPaletteColors: "by color"
   "prettier-atom":
     formatOnSaveOptions:
       enabled: true
+      isDisabledIfNoConfigFile: true
       isDisabledIfNotInPackageJson: true
       showInStatusBar: true
     prettierOptions:
       singleQuote: true
       trailingComma: "all"
     useEditorConfig: false
-    useEslint: true
+  "project-manager":
+    includeGitRepositories: true
+    prettifyTitle: false
+    sortBy: "last modified"
   "spell-check":
     grammars: [
       "text.plain"
@@ -58,7 +94,6 @@
       "text.git-commit"
       "text.html.basic"
     ]
-  tabs: {}
   "tree-view":
     hideIgnoredNames: true
   welcome:
