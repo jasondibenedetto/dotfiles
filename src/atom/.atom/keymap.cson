@@ -1,0 +1,2 @@
+'.platform-darwin, .platform-darwin .command-palette atom-text-editor':
+  'cmd-;': 'command-palette:toggle'
