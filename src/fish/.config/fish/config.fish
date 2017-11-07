@@ -1,5 +1,6 @@
 # editor
-set -x EDITOR atom
+set -x EDITOR atom-beta
+set -x VISUAL atom-beta
 
 # aliases
 source "$HOME/.config/fish/aliases.fish"
