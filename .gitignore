@@ -7,6 +7,7 @@ src/fish/.config/fish/local.fish
 
 src/atom/.atom/*
 !src/atom/.atom/config.cson
+!src/atom/.atom/keymap.cson
 !src/atom/.atom/packages.txt
 
 src/vim/.vim/plugins/*
