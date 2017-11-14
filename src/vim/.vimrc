@@ -10,7 +10,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
   Plug 'prettier/vim-prettier', { 'for': ['javascript.jsx', 'scss', 'json'] }
   Plug 'scrooloose/nerdtree'
-  Plug 'scrooloose/syntastic'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-sensible'
@@ -18,6 +17,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'Valloric/MatchTagAlways', { 'for': 'html' }
   Plug 'vim-airline/vim-airline'
   Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'w0rp/ale'
+  Plug 'prabirshrestha/asyncomplete.vim'
 call plug#end()
 
 " plugin settings
@@ -25,10 +26,10 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list=1
-let g:syntastic_auto_loc_list=1
-let g:syntastic_javascript_checkers=['eslint']
-let g:jsx_ext_required=0
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 let NERDTreeShowHidden=1
 let NERDTreeMouseMode=2
