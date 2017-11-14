@@ -1,11 +1,5 @@
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall
-endif
-
 " plugins
-call plug#begin('~/.vim/plugins')
+call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'ap/vim-css-color', { 'for': 'scss' }
   Plug 'arcticicestudio/nord-vim'
@@ -44,6 +38,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " theme
 colorscheme nord
+set termguicolors
 
 " indentation
 set expandtab
