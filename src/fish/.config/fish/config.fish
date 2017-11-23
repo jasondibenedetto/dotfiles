@@ -1,6 +1,5 @@
 # editor
-set -x EDITOR atom-beta
-set -x VISUAL atom-beta
+set -x EDITOR nvim
 
 # aliases
 source "$HOME/.config/fish/aliases.fish"
@@ -8,12 +7,8 @@ source "$HOME/.config/fish/aliases.fish"
 # paths
 source "$HOME/.config/fish/paths.fish"
 
-# local
-set -l local "$HOME/.config/fish/local.fish"
-
-if test -f $local
-  source $local
-end
-
 # theme
 set pure_symbol_prompt '→'
+
+# direnv
+eval (direnv hook fish)

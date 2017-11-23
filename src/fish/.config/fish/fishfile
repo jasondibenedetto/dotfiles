@@ -2,7 +2,7 @@ fisherman/await
 oh-my-fish/plugin-bang-bang
 edc/bass
 fisherman/cprintf
-oh-my-fish/plugin-direnv
+fisherman/docker-completion
 mnewt/fix
 fisherman/fzf
 fisherman/get

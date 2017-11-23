@@ -1,35 +1,28 @@
 " plugins
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
-  Plug 'ap/vim-css-color', { 'for': 'scss' }
+  Plug 'ap/vim-css-color'
   Plug 'arcticicestudio/nord-vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-  Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+  Plug 'mxw/vim-jsx'
   Plug 'ntpeters/vim-better-whitespace'
-  Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-  Plug 'prettier/vim-prettier', { 'for': ['javascript.jsx', 'scss', 'json'] }
+  Plug 'pangloss/vim-javascript'
   Plug 'scrooloose/nerdtree'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
-  Plug 'Valloric/MatchTagAlways', { 'for': 'html' }
   Plug 'vim-airline/vim-airline'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'w0rp/ale'
-  Plug 'prabirshrestha/asyncomplete.vim'
 call plug#end()
 
 " plugin settings
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
 
 let NERDTreeShowHidden=1
 let NERDTreeMouseMode=2
@@ -39,7 +32,6 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 
 " theme
 colorscheme nord
-set termguicolors
 
 " indentation
 set expandtab
@@ -99,4 +91,3 @@ set showmatch
 set splitbelow
 set splitright
 set visualbell
-
