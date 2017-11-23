@@ -1,8 +1,8 @@
 " plugins
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
-  Plug 'ap/vim-css-color'
   Plug 'arcticicestudio/nord-vim'
+  Plug 'itchyny/lightline.vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'mxw/vim-jsx'
@@ -11,10 +11,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'scrooloose/nerdtree'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-fugitive'
-  Plug 'tpope/vim-sensible'
   Plug 'tpope/vim-surround'
-  Plug 'vim-airline/vim-airline'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'w0rp/ale'
 call plug#end()
 
@@ -29,6 +26,19 @@ let NERDTreeMouseMode=2
 let NERDTreeMinimalUI=1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \ 'left': [['mode', 'paste'],
+      \ ['gitbranch', 'readonly', 'filename', 'modified']],
+      \ 'right': [['filetype']]
+      \ },
+      \ 'component_function': {
+      \ 'gitbranch': 'fugitive#head'
+      \ }
+      \ }
 
 " theme
 colorscheme nord
