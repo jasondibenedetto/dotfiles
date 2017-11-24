@@ -1,13 +1,17 @@
 " plugins
 call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
+  Plug 'ap/vim-buftabline'
   Plug 'arcticicestudio/nord-vim'
   Plug 'itchyny/lightline.vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'maximbaz/lightline-ale'
   Plug 'mxw/vim-jsx'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'pangloss/vim-javascript'
+  Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+  Plug 'roxma/nvim-completion-manager'
   Plug 'scrooloose/nerdtree'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-fugitive'
@@ -33,10 +37,19 @@ let g:lightline = {
       \ 'active': {
       \ 'left': [['mode', 'paste'],
       \ ['gitbranch', 'readonly', 'filename', 'modified']],
-      \ 'right': [['filetype']]
+      \ 'right': [['linter_errors', 'linter_warnings', 'linter_ok'], ['filetype']]
       \ },
       \ 'component_function': {
       \ 'gitbranch': 'fugitive#head'
+      \ },
+      \ 'component_type': {
+      \ 'linter_warnings': 'warning',
+      \ 'linter_errors': 'error'
+      \ },
+      \ 'component_expand': {
+      \ 'linter_warnings': 'lightline#ale#warnings',
+      \ 'linter_errors': 'lightline#ale#errors',
+      \ 'linter_ok': 'lightline#ale#ok'
       \ }
       \ }
 
