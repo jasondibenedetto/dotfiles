@@ -3,16 +3,17 @@ call plug#begin('~/.vim/plugged')
   Plug 'airblade/vim-gitgutter'
   Plug 'ap/vim-buftabline'
   Plug 'arcticicestudio/nord-vim'
+  Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
   Plug 'itchyny/lightline.vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
   Plug 'maximbaz/lightline-ale'
+  Plug 'moll/vim-bbye'
   Plug 'mxw/vim-jsx'
   Plug 'ntpeters/vim-better-whitespace'
   Plug 'pangloss/vim-javascript'
-  Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
-  Plug 'roxma/nvim-completion-manager'
   Plug 'scrooloose/nerdtree'
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
@@ -24,6 +25,8 @@ let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier', 'eslint']
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+
+let g:deoplete#enable_at_startup = 1
 
 let NERDTreeShowHidden=1
 let NERDTreeMouseMode=2
