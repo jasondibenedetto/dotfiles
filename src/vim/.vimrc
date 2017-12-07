@@ -18,11 +18,16 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
   Plug 'w0rp/ale'
+  Plug 'wokalski/autocomplete-flow'
 call plug#end()
 
 " plugin settings
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier', 'eslint']
+let g:ale_linters = {
+      \ 'javascript': ['prettier', 'eslint', 'flow']
+      \ }
+let g:ale_fixers = {
+      \ 'javascript': ['prettier', 'eslint']
+      \ }
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
@@ -34,7 +39,6 @@ let NERDTreeMinimalUI=1
 let NERDTreeIgnore=['.DS_Store']
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-autocmd BufEnter * if (winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree()) | q | endif
 
 let g:lightline = {
       \ 'colorscheme': 'nord',
