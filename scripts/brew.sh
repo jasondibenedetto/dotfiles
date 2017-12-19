@@ -43,6 +43,6 @@ brew install rbenv
 brew install ripgrep
 brew install rsync
 brew install stow
-brew install vim --with-override-system-vi
+brew install vim --with-override-system-vi --with-python3
 brew install yarn
 brew install z
