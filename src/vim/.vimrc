@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'itchyny/lightline.vim'
   Plug 'jiangmiao/auto-pairs'
   Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+  Plug 'junegunn/fzf.vim'
   Plug 'maximbaz/lightline-ale'
   Plug 'moll/vim-bbye'
   Plug 'mxw/vim-jsx'
@@ -14,6 +15,7 @@ call plug#begin('~/.vim/plugged')
   Plug 'pangloss/vim-javascript'
   Plug 'scrooloose/nerdtree'
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+  Plug 'styled-components/vim-styled-components'
   Plug 'terryma/vim-multiple-cursors'
   Plug 'tpope/vim-fugitive'
   Plug 'tpope/vim-surround'
@@ -21,18 +23,28 @@ call plug#begin('~/.vim/plugged')
   Plug 'wokalski/autocomplete-flow'
 call plug#end()
 
-" plugin settings
+" w0rp/ale
 let g:ale_linters = {
-      \ 'javascript': ['prettier', 'eslint', 'flow']
+      \ 'javascript': ['prettier', 'eslint', 'flow'],
+      \ 'jsx': ['stylelint']
       \ }
 let g:ale_fixers = {
       \ 'javascript': ['prettier', 'eslint']
       \ }
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
+let g:ale_linter_aliases = { 'jsx': 'css' }
 
+" Shougo/deoplete.nvim
 let g:deoplete#enable_at_startup = 1
 
+" pangloss/vim-javascript
+let g:javascript_plugin_flow = 1
+
+" mxw/vim-jsx
+let g:jsx_ext_required = 0
+
+" scrooloose/nerdtee
 let NERDTreeShowHidden=1
 let NERDTreeMouseMode=2
 let NERDTreeMinimalUI=1
@@ -40,6 +52,7 @@ let NERDTreeIgnore=['.DS_Store']
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
+" itchyny/lightline.vim
 let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
@@ -60,6 +73,19 @@ let g:lightline = {
       \ 'linter_ok': 'lightline#ale#ok'
       \ }
       \ }
+
+" terryma/vim-multiple-cursors
+function! Multiple_cursors_before()
+  if exists('g:deoplete#disable_auto_complete')
+    let g:deoplete#disable_auto_complete = 1
+  endif
+endfunction
+
+function! Multiple_cursors_after()
+  if exists('g:deoplete#disable_auto_complete')
+    let g:deoplete#disable_auto_complete = 0
+  endif
+endfunction
 
 " theme
 colorscheme nord
@@ -85,15 +111,12 @@ autocmd BufWritePre * :%s/\s\+$//e
 
 " line numbers
 set number
-set numberwidth=3
+set numberwidth=5
 
 " backups
 set nobackup
 set noswapfile
 set nowritebackup
-
-" path will be base dir that vim is opened from
-set path=$PWD/**
 
 " search
 set hlsearch
@@ -123,3 +146,7 @@ set splitbelow
 set splitright
 set visualbell
 set cmdheight=2
+
+" keybindings
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprev<CR>
