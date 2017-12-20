@@ -3,7 +3,7 @@ call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
-Plug 'arcticicestudio/nord-vim'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -165,3 +165,14 @@ augroup vim_better_whitespace
   autocmd BufEnter * EnableStripWhitespaceOnSave
 augroup END
 " }}}
+
+" junegunn/fzf.vim {{{
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always '.shellescape(<q-args>), 1,
+  \   <bang>0 ? fzf#vim#with_preview('up:60%')
+  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \   <bang>0)
+
+" }}}
+
