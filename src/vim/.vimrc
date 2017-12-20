@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'styled-components/vim-styled-components'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
 Plug 'w0rp/ale'
 Plug 'wokalski/autocomplete-flow'
 
@@ -33,7 +34,6 @@ call plug#end()
 
 " }}}
 " settings {{{
-set autoread
 set clipboard=unnamed
 set cursorline
 set diffopt=filler,vertical
