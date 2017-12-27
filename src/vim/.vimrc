@@ -1,15 +1,22 @@
 " plugins {{{
 call plug#begin()
 
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+
 Plug 'airblade/vim-gitgutter'
-Plug 'ap/vim-buftabline'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'bling/vim-bufferline'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'itchyny/lightline.vim'
+Plug 'editorconfig/editorconfig-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
-Plug 'maximbaz/lightline-ale'
 Plug 'moll/vim-bbye'
 Plug 'mxw/vim-jsx'
 Plug 'ntpeters/vim-better-whitespace'
@@ -19,16 +26,9 @@ Plug 'styled-components/vim-styled-components'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
+Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'wokalski/autocomplete-flow'
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 call plug#end()
 
@@ -55,7 +55,7 @@ set nostartofline
 set noswapfile
 set nowritebackup
 set number
-set numberwidth=5
+set numberwidth=3
 set shiftwidth=2
 set showmatch
 set smartcase
@@ -121,29 +121,6 @@ augroup nerdtree
 augroup END
 
 " }}}
-" itchyny/lightline.vim {{{
-let g:lightline = {
-      \ 'colorscheme': 'nord',
-      \ 'active': {
-      \ 'left': [['mode', 'paste'],
-      \ ['gitbranch', 'readonly', 'filename', 'modified']],
-      \ 'right': [['linter_errors', 'linter_warnings', 'linter_ok'], ['filetype']]
-      \ },
-      \ 'component_function': {
-      \ 'gitbranch': 'fugitive#head'
-      \ },
-      \ 'component_type': {
-      \ 'linter_warnings': 'warning',
-      \ 'linter_errors': 'error'
-      \ },
-      \ 'component_expand': {
-      \ 'linter_warnings': 'lightline#ale#warnings',
-      \ 'linter_errors': 'lightline#ale#errors',
-      \ 'linter_ok': 'lightline#ale#ok'
-      \ }
-      \ }
-
-" }}}
 " terryma/vim-multiple-cursors {{{
 function! Multiple_cursors_before() abort
   if exists('g:deoplete#disable_auto_complete')
@@ -175,4 +152,17 @@ command! -bang -nargs=* Rg
   \   <bang>0)
 
 " }}}
+" editorconfig/editorconfig.vim {{{
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
+" }}}
+" vim-airline/vim-airline {{{
+let g:airline_theme = 'nord'
+let g:airline_powerline_fonts = 1
+let g:airline_extensions = ['branch', 'bufferline', 'fugitiveline', 'ale', 'hunks']
+
+" }}}
+" bling/vim-bufferline {{{
+let g:bufferline_echo = 0
+
+" }}}
