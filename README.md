@@ -1,7 +1,6 @@
-# dotfiles
+# 🏡 dotfiles
 
 ```bash
-git clone https://github.com/jasondibenedetto/dotfiles.git && cd dotfiles && ./install
+git clone git@github.com:jasondibenedetto/dotfiles.git && cd dotfiles && ./install
 ```
 
-🏄🏽

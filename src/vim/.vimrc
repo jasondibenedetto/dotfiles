@@ -1,6 +1,28 @@
 " plugins {{{
 call plug#begin()
 
+Plug 'airblade/vim-gitgutter'
+Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
+Plug 'bling/vim-bufferline'
+Plug 'dag/vim-fish'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for': 'javascript.jsx' }
+Plug 'editorconfig/editorconfig-vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara'  }
+Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
+Plug 'ntpeters/vim-better-whitespace'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript.jsx' }
+Plug 'rstacruz/vim-closer'
+Plug 'scrooloose/nerdtree'
+Plug 'styled-components/vim-styled-components', { 'for': 'javascript.jsx' }
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-sensible'
+Plug 'vim-airline/vim-airline'
+Plug 'w0rp/ale'
+Plug 'wokalski/autocomplete-flow', { 'for': 'javascript.jsx' }
+
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 else
@@ -9,33 +31,11 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 
-Plug 'airblade/vim-gitgutter'
-Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'bling/vim-bufferline'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'editorconfig/editorconfig-vim'
-Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
-Plug 'moll/vim-bbye'
-Plug 'mxw/vim-jsx'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'pangloss/vim-javascript'
-Plug 'scrooloose/nerdtree'
-Plug 'styled-components/vim-styled-components'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-sensible'
-Plug 'vim-airline/vim-airline'
-Plug 'w0rp/ale'
-Plug 'wokalski/autocomplete-flow'
-
 call plug#end()
 
 " }}}
 " settings {{{
 set clipboard=unnamed
-set cursorline
 set diffopt=filler,vertical
 set expandtab
 set foldlevel=0
@@ -135,14 +135,6 @@ function! Multiple_cursors_after() abort
 endfunction
 
 " }}}
-" ntpeters/vim-better-whitespace {{{
-augroup vim_better_whitespace
-  autocmd!
-
-  autocmd BufEnter * EnableStripWhitespaceOnSave
-augroup END
-" }}}
-
 " junegunn/fzf.vim {{{
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
