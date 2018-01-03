@@ -2,24 +2,25 @@
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-buftabline'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'bling/vim-bufferline'
-Plug 'dag/vim-fish'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for': 'javascript.jsx' }
+Plug 'dag/vim-fish'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'maximbaz/lightline-ale'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara'  }
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript.jsx' }
-Plug 'rstacruz/vim-closer'
 Plug 'scrooloose/nerdtree'
 Plug 'styled-components/vim-styled-components', { 'for': 'javascript.jsx' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
-Plug 'vim-airline/vim-airline'
 Plug 'w0rp/ale'
 Plug 'wokalski/autocomplete-flow', { 'for': 'javascript.jsx' }
 
@@ -148,13 +149,30 @@ command! -bang -nargs=* Rg
 let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " }}}
-" vim-airline/vim-airline {{{
-let g:airline_theme = 'nord'
-let g:airline_powerline_fonts = 1
-let g:airline_extensions = ['branch', 'bufferline', 'fugitiveline', 'ale', 'hunks']
+" itchyny/lightline.vim {{{
+let g:lightline = {
+      \ 'colorscheme': 'nord',
+      \ 'active': {
+      \ 'left': [['mode', 'paste'],
+      \ ['gitbranch', 'readonly', 'filename', 'modified']],
+      \ 'right': [['linter_errors', 'linter_warnings', 'linter_ok'], ['filetype']]
+      \ },
+      \ 'component_function': {
+      \ 'gitbranch': 'fugitive#head'
+      \ },
+      \ 'component_type': {
+      \ 'linter_warnings': 'warning',
+      \ 'linter_errors': 'error'
+      \ },
+      \ 'component_expand': {
+      \ 'linter_warnings': 'lightline#ale#warnings',
+      \ 'linter_errors': 'lightline#ale#errors',
+      \ 'linter_ok': 'lightline#ale#ok'
+      \ }
+      \ }
 
 " }}}
-" bling/vim-bufferline {{{
-let g:bufferline_echo = 0
+" ap/vim-buftabline {{{
+let g:buftabline_show = 1
 
 " }}}
