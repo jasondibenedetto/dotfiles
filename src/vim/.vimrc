@@ -2,14 +2,14 @@
 call plug#begin()
 
 Plug 'airblade/vim-gitgutter'
-Plug 'ap/vim-buftabline'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for': 'javascript.jsx' }
 Plug 'dag/vim-fish'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'maximbaz/lightline-ale'
 Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara'  }
@@ -70,15 +70,9 @@ if has('nvim')
 endif
 
 " }}}
-" mappings {{{
-nnoremap <Tab> :bnext<CR>
-nnoremap <S-Tab> :bprev<CR>
 
-" }}}
 " arcticicestudio/nord-vim {{{
 let g:nord_uniform_diff_background = 1
-
-colorscheme nord
 
 " }}}
 " w0rp/ale {{{
@@ -172,7 +166,12 @@ let g:lightline = {
       \ }
 
 " }}}
-" ap/vim-buftabline {{{
-let g:buftabline_show = 1
+" mappings {{{
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprev<CR>
+
+" }}}
+" colorscheme {{{
+colorscheme nord
 
 " }}}
