@@ -26,5 +26,5 @@ done
 
 hydrate
 
-printf "${mag}[done]${end} 🏡"
+printf "${mag}[done]${end} 🍙"
 
