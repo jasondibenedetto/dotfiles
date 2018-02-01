@@ -7,27 +7,27 @@ endif
 
 call plug#begin()
 
+Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for': 'javascript.jsx' }
 Plug 'dag/vim-fish'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'jiangmiao/auto-pairs'
-Plug '/usr/local/opt/fzf'
+Plug 'rstacruz/vim-closer'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'maximbaz/lightline-ale'
-Plug 'mhinz/vim-sayonara', { 'on': 'Sayonara'  }
+Plug 'mhinz/vim-startify'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript.jsx' }
-Plug 'scrooloose/nerdtree'
 Plug 'styled-components/vim-styled-components', { 'for': 'javascript.jsx' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'w0rp/ale'
+Plug 'whatyouhide/vim-lengthmatters'
 Plug 'wokalski/autocomplete-flow', { 'for': 'javascript.jsx' }
 
 if has('nvim')
@@ -69,14 +69,13 @@ set smartcase
 set splitbelow
 set splitright
 set visualbell
-set wildmode=full
+set wildmode=list:full
 
 if has('nvim')
   set termguicolors
 endif
 
 " }}}
-
 " arcticicestudio/nord-vim {{{
 let g:nord_uniform_diff_background = 1
 
@@ -112,15 +111,6 @@ let NERDTreeMouseMode = 2
 let NERDTreeMinimalUI = 1
 let NERDTreeIgnore = ['.DS_Store']
 
-augroup nerdtree
-  autocmd!
-
-  autocmd StdinReadPre * let s:std_in = 1
-  autocmd VimEnter * if argc() == 1
-        \ && isdirectory(argv()[0])
-        \ && !exists('s:std_in') | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
-augroup END
-
 " }}}
 " terryma/vim-multiple-cursors {{{
 function! Multiple_cursors_before() abort
@@ -154,7 +144,7 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \ 'left': [['mode', 'paste'],
-      \ ['gitbranch', 'readonly', 'filename', 'modified']],
+      \ ['gitbranch', 'readonly', 'relativepath', 'modified']],
       \ 'right': [['linter_errors', 'linter_warnings', 'linter_ok'], ['filetype']]
       \ },
       \ 'component_function': {
@@ -173,6 +163,12 @@ let g:lightline = {
 
 " }}}
 " mappings {{{
+let g:mapleader = '\'
+
+nnoremap <leader><space> :Files<CR>
+nnoremap <leader>g :GFiles<CR>
+nnoremap <leader>b :Buffers<CR>
+
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
 
