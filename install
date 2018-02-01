@@ -6,13 +6,6 @@ end='\e[0m'
 bld='\e[1m'
 dim='\e[2m'
 
-hydrate() {
-  for pkg in `ls src`; do
-    (cd src && stow --target=$HOME $pkg)
-    printf "${dim}[link]${end} $pkg\n"
-  done
-}
-
 printf "install dotfiles? ${bld}[y/n]${end} ${red}>>${end} "
 
 while true; do
@@ -24,7 +17,19 @@ while true; do
   esac
 done
 
-hydrate
+if test ! $(which brew); then
+  printf "installing homebrew"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+fi
+
+source './scripts/brew.sh'
+
+source './scripts/brew.sh'
+
+for pkg in `ls src`; do
+  (cd src && stow --target=$HOME $pkg)
+  printf "${dim}[link]${end} $pkg\n"
+done
 
 printf "${mag}[done]${end} 🍙"
 
