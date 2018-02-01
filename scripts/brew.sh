@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# taps
+brew tap fisherman/tap
+
 # install gnu formulas
 brew install coreutils
 brew install binutils
