@@ -4,6 +4,7 @@ edc/bass
 fisherman/cprintf
 fisherman/docker-completion
 mnewt/fix
+oh-my-fish/plugin-foreign-env
 fisherman/fzf
 fisherman/get
 fisherman/getopts

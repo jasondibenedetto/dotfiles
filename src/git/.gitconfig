@@ -2,11 +2,11 @@
   excludesfile = ~/.gitignore_global
   editor = nvim
 [user]
-  name = jasondibenedetto
+  name = Jason Di Benedetto
   email = jason.dibenedetto6@gmail.com
+  username = jasondibenedetto
 [color]
   ui = true
-[credential]
-  helper = osxkeychain
 [push]
   default = simple
+

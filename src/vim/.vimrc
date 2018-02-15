@@ -14,20 +14,18 @@ Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for': 'javascri
 Plug 'dag/vim-fish'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'rstacruz/vim-closer'
+Plug 'jiangmiao/auto-pairs'
+Plug 'jparise/vim-graphql'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'LnL7/vim-nix'
 Plug 'maximbaz/lightline-ale'
-Plug 'mhinz/vim-startify'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
-Plug 'ntpeters/vim-better-whitespace'
 Plug 'pangloss/vim-javascript', { 'for': 'javascript.jsx' }
-Plug 'styled-components/vim-styled-components', { 'for': 'javascript.jsx' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'w0rp/ale'
-Plug 'whatyouhide/vim-lengthmatters'
 Plug 'wokalski/autocomplete-flow', { 'for': 'javascript.jsx' }
 
 if has('nvim')
@@ -68,8 +66,9 @@ set showmatch
 set smartcase
 set splitbelow
 set splitright
+set textwidth=80
 set visualbell
-set wildmode=list:full
+set wildmode=list:longest
 
 if has('nvim')
   set termguicolors
@@ -99,17 +98,6 @@ let g:deoplete#enable_at_startup = 1
 " }}}
 " pangloss/vim-javascript {{{
 let g:javascript_plugin_flow = 1
-
-" }}}
-" mxw/vim-jsx {{{
-let g:jsx_ext_required = 0
-
-" }}}
-" scrooloose/nerdtee {{{
-let NERDTreeShowHidden = 1
-let NERDTreeMouseMode = 2
-let NERDTreeMinimalUI = 1
-let NERDTreeIgnore = ['.DS_Store']
 
 " }}}
 " terryma/vim-multiple-cursors {{{
