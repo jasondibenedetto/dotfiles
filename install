@@ -24,7 +24,7 @@ fi
 
 source './scripts/brew.sh'
 
-source './scripts/brew.sh'
+source './scripts/brew-cask.sh'
 
 for pkg in `ls src`; do
   (cd src && stow --target=$HOME $pkg)
