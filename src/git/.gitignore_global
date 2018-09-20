@@ -2,4 +2,5 @@
 .tern-port
 .swp
 yarn-error.log
+.git
 
