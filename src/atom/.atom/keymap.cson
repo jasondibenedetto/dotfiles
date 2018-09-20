@@ -1,4 +1,0 @@
-'.platform-darwin, .platform-darwin .command-palette atom-text-editor':
-  'cmd-;': 'command-palette:toggle'
-'.platform-darwin atom-workspace':
-  'cmd-o': 'advanced-open-file:toggle'

@@ -16,17 +16,25 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'jparise/vim-graphql'
+Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
+Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'LnL7/vim-nix'
 Plug 'maximbaz/lightline-ale'
 Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript.jsx' }
+Plug 'RRethy/vim-illuminate'
+Plug 'scrooloose/nerdtree'
+Plug 'styled-components/vim-styled-components'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'w0rp/ale'
 Plug 'wokalski/autocomplete-flow', { 'for': 'javascript.jsx' }
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'danro/rename.vim'
+Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
 
 if has('nvim')
   Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -58,6 +66,7 @@ set nomodeline
 set noshowmode
 set nostartofline
 set noswapfile
+set nowrap
 set nowritebackup
 set number
 set numberwidth=3
@@ -68,26 +77,34 @@ set splitbelow
 set splitright
 set textwidth=80
 set visualbell
-set wildmode=list:longest
+set wildmode=full
 
 if has('nvim')
   set termguicolors
 endif
 
+let NERDTreeShowHidden = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeMouseMode = 2
+
 " }}}
 " arcticicestudio/nord-vim {{{
 let g:nord_uniform_diff_background = 1
+let g:nord_underline = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
+let g:nord_uniform_status_lines = 1
 
 " }}}
 " w0rp/ale {{{
 let g:ale_linters = {
       \ 'javascript': ['prettier', 'eslint', 'flow'],
-      \ 'jsx': ['stylelint']
+      \ 'typescript': ['prettier', 'tslint', 'tsserver', 'typecheck']
       \ }
 let g:ale_fixers = {
-      \ 'javascript': ['prettier', 'eslint']
+      \ 'javascript': ['prettier', 'eslint'],
+      \ 'typescript': ['prettier', 'tslint']
       \ }
-let g:ale_linter_aliases = { 'jsx': 'css' }
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
@@ -146,7 +163,12 @@ let g:lightline = {
       \ 'linter_warnings': 'lightline#ale#warnings',
       \ 'linter_errors': 'lightline#ale#errors',
       \ 'linter_ok': 'lightline#ale#ok'
-      \ }
+      \ },
+      \ 'component': {
+      \   'lineinfo': '⭡ %3l:%-2v',
+      \ },
+      \ 'separator': { 'left': "", 'right': "" },
+      \ 'subseparator': { 'left': "", 'right': "'" }
       \ }
 
 " }}}
@@ -156,9 +178,15 @@ let g:mapleader = '\'
 nnoremap <leader><space> :Files<CR>
 nnoremap <leader>g :GFiles<CR>
 nnoremap <leader>b :Buffers<CR>
+nnoremap <leader>- :NERDTreeToggle<CR>
 
 nnoremap <Tab> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
+
+nnoremap <leader><Down> <C-W><C-J>
+nnoremap <leader><Up> <C-W><C-K>
+nnoremap <leader><Right> <C-W><C-L>
+nnoremap <leader><Left> <C-W><C-H>
 
 " }}}
 " colorscheme {{{
