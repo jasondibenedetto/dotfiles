@@ -1,0 +1,4 @@
+#!/bin/sh
+
+ln -sf $(find $PWD -type f | grep "settings.json") \
+  "$HOME/Library/Application Support/Code/User/settings.json"
