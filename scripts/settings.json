@@ -1,0 +1,34 @@
+{
+    "workbench.statusBar.visible": true,
+    "workbench.activityBar.visible": false,
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 2,
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.renderWhitespace": "all",
+    "editor.minimap.enabled": false,
+    "editor.codeLens": false,
+    "prettier.requireConfig": true,
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true,
+    "editor.detectIndentation": false,
+    "workbench.statusBar.feedback.visible": false,
+    "workbench.colorTheme": "Nord",
+    "editor.rulers": [
+      80
+    ],
+    "extensions.ignoreRecommendations": false,
+    "pgFormatter.keywordCase": "lowercase",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "pgFormatter.spaces": 2,
+    "files.associations": {
+      ".envrc": "shellscript"
+    },
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "typescript",
+      "typescriptreact"
+    ],
+    "editor.fontFamily": "Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13
+  }
