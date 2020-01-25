@@ -1,25 +1,22 @@
 #!/bin/sh
 
-# taps
-brew tap fisherman/tap
-
 # install gnu formulas
 brew install coreutils
 brew install binutils
 brew install diffutils
-brew install ed --with-default-names
-brew install findutils --with-default-names
+brew install ed
+brew install findutils
 brew install gawk
-brew install gnu-indent --with-default-names
-brew install gnu-sed --with-default-names
-brew install gnu-tar --with-default-names
-brew install gnu-which --with-default-names
+brew install gnu-indent
+brew install gnu-sed
+brew install gnu-tar
+brew install gnu-which
 brew install gnutls
-brew install grep --with-default-names
+brew install grep
 brew install gzip
 brew install screen
 brew install watch
-brew install wdiff --with-gettext
+brew install wdiff
 brew install wget
 
 # upgrade existing gnu formulas
@@ -34,7 +31,6 @@ brew install nano
 # other formulas
 brew install direnv
 brew install fish
-brew install fisherman
 brew install fzf
 brew install git
 brew install less
@@ -46,8 +42,7 @@ brew install rbenv
 brew install ripgrep
 brew install rsync
 brew install stow
-brew install thefuck
 brew install tmux
-brew install vim --with-override-system-vi --with-python3
+brew install vim
 brew install yarn
 brew install z

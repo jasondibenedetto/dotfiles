@@ -1,13 +1,9 @@
 src/fish/.config/fish/fishd*
 src/fish/.config/fish/conf.d
 src/fish/.config/fish/functions
-src/fish/.config/fish/completions/*
+src/fish/.config/fish/completions
 src/fish/.config/fish/local.fish
-!src/fish/.config/fish/completions/fisher.fish
+src/fish/.config/fish/fish_variables
 
 src/vim/.vim/plugins/*
 src/vim/.vim/autoload/*
-
-src/yarn/.config/yarn/global/*
-src/yarn/.config/yarn/link/*
-!src/yarn/.config/yarn/global/package.json

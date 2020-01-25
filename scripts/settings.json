@@ -27,8 +27,8 @@
       "typescript",
       "typescriptreact"
     ],
-    "editor.fontFamily": "Source Code Pro, Menlo, Monaco, 'Courier New', monospace",
-    "editor.fontSize": 13,
+    "editor.fontFamily": "Input, Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 14,
     "window.zoomLevel": 0,
     "csharpfixformat.style.spaces.beforeParenthesis": false,
     "[csharp]": {
