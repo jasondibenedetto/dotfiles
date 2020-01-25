@@ -3,4 +3,4 @@
 .swp
 yarn-error.log
 .git
-
+tsconfig.tsbuildinfo

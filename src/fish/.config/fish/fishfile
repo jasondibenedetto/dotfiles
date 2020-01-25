@@ -1,7 +1,6 @@
 rafaelrinaldi/pure
 fisherman/fzf
-tuvistavie/fish-ssh-agent
-oh-my-fish/plugin-foreign-env
 fisherman/z
-barnybug/docker-fish-completion
+oh-my-fish/plugin-foreign-env
+jorgebucaran/fish-nvm
 edc/bass
