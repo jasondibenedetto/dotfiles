@@ -10,39 +10,17 @@ call plug#begin()
 Plug '/usr/local/opt/fzf'
 Plug 'airblade/vim-gitgutter'
 Plug 'arcticicestudio/nord-vim', { 'branch': 'develop' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern', 'for': 'javascript.jsx' }
-Plug 'dag/vim-fish'
-Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'jparise/vim-graphql'
-Plug 'jreybert/vimagit'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
 Plug 'LnL7/vim-nix'
 Plug 'maximbaz/lightline-ale'
-Plug 'mxw/vim-jsx', { 'for': 'javascript.jsx' }
 Plug 'pangloss/vim-javascript', { 'for': 'javascript.jsx' }
-Plug 'RRethy/vim-illuminate'
-Plug 'scrooloose/nerdtree'
-Plug 'styled-components/vim-styled-components'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-sensible'
 Plug 'w0rp/ale'
-Plug 'wokalski/autocomplete-flow', { 'for': 'javascript.jsx' }
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'danro/rename.vim'
-Plug 'mhartington/nvim-typescript', {'do': './install.sh'}
-
-if has('nvim')
-  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-  Plug 'Shougo/deoplete.nvim'
-  Plug 'roxma/nvim-yarp'
-  Plug 'roxma/vim-hug-neovim-rpc'
-endif
 
 call plug#end()
 
@@ -79,14 +57,6 @@ set textwidth=80
 set visualbell
 set wildmode=full
 
-if has('nvim')
-  set termguicolors
-endif
-
-let NERDTreeShowHidden = 1
-let NERDTreeMinimalUI = 1
-let NERDTreeMouseMode = 2
-
 " }}}
 " arcticicestudio/nord-vim {{{
 let g:nord_uniform_diff_background = 1
@@ -109,26 +79,8 @@ let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
 " }}}
-" Shougo/deoplete.nvim {{{
-let g:deoplete#enable_at_startup = 1
-
-" }}}
 " pangloss/vim-javascript {{{
 let g:javascript_plugin_flow = 1
-
-" }}}
-" terryma/vim-multiple-cursors {{{
-function! Multiple_cursors_before() abort
-  if exists('g:deoplete#disable_auto_complete')
-    let g:deoplete#disable_auto_complete = 1
-  endif
-endfunction
-
-function! Multiple_cursors_after() abort
-  if exists('g:deoplete#disable_auto_complete')
-    let g:deoplete#disable_auto_complete = 0
-  endif
-endfunction
 
 " }}}
 " junegunn/fzf.vim {{{
@@ -138,10 +90,6 @@ command! -bang -nargs=* Rg
   \   <bang>0 ? fzf#vim#with_preview('up:60%')
   \           : fzf#vim#with_preview('right:50%:hidden', '?'),
   \   <bang>0)
-
-" }}}
-" editorconfig/editorconfig.vim {{{
-let g:EditorConfig_exclude_patterns = ['fugitive://.*']
 
 " }}}
 " itchyny/lightline.vim {{{

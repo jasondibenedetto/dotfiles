@@ -423,19 +423,47 @@
 	<real>1.0900000333786011</real>
 	<key>GlobalKeyMap</key>
 	<dict>
-		<key>0x5f-0x20000</key>
+		<key>0x5f-0x120000</key>
 		<dict>
 			<key>Action</key>
 			<integer>28</integer>
 			<key>Text</key>
 			<string>21048CBB-8F4B-4492-A49A-8DCDADDF9248</string>
 		</dict>
-		<key>0x7c-0x20000</key>
+		<key>0x7c-0x120000</key>
 		<dict>
 			<key>Action</key>
 			<integer>29</integer>
 			<key>Text</key>
 			<string>21048CBB-8F4B-4492-A49A-8DCDADDF9248</string>
+		</dict>
+		<key>0xf700-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>20</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf701-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>21</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf702-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>18</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf703-0x300000</key>
+		<dict>
+			<key>Action</key>
+			<integer>19</integer>
+			<key>Text</key>
+			<string></string>
 		</dict>
 	</dict>
 	<key>HapticFeedbackForEsc</key>
@@ -525,8 +553,10 @@
 		<key>TB Is Shown</key>
 		<integer>1</integer>
 	</dict>
+	<key>NSWindow Frame SUUpdateAlert</key>
+	<string>1795 546 620 392 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>1280 0 1280 1417 0 0 2560 1417 </string>
+	<string>-1080 -590 1208 1897 -1080 -590 1080 1897 </string>
 	<key>NeverWarnAboutShortLivedSessions_21048CBB-8F4B-4492-A49A-8DCDADDF9248</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -1438,12 +1468,14 @@
 			<key>Window Type</key>
 			<integer>13</integer>
 			<key>Working Directory</key>
-			<string></string>
+			<string>~/Code</string>
 		</dict>
 	</array>
 	<key>NoSyncAllAppVersions</key>
 	<array>
 		<string>3.3.8beta5</string>
+		<string>3.3.10beta1</string>
+		<string>3.3.9beta1</string>
 	</array>
 	<key>NoSyncBFPRecents</key>
 	<array>
@@ -1455,20 +1487,22 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {2560, 1440}}</string>
 		<key>topLeft</key>
-		<string>{222, 610}</string>
+		<string>{104, 775}</string>
 	</dict>
 	<key>NoSyncInstallationId</key>
 	<string>19308866-F847-49FA-807C-3708C4B81371</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>7</integer>
+	<integer>42</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
 	<integer>0</integer>
 	<key>NoSyncNextAnnoyanceTime</key>
-	<real>601798096.68255997</real>
+	<real>601939069.14234495</real>
 	<key>NoSyncOnboardingWindowHasBeenShown</key>
 	<true/>
+	<key>NoSyncPermissionToShowTip</key>
+	<false/>
 	<key>NoSyncRecordedVariables</key>
 	<dict>
 		<key>0</key>
@@ -2242,6 +2276,8 @@
 	<integer>8</integer>
 	<key>RightOption</key>
 	<integer>3</integer>
+	<key>SUAutomaticallyUpdate</key>
+	<true/>
 	<key>SUEnableAutomaticChecks</key>
 	<true/>
 	<key>SUFeedAlternateAppNameKey</key>
@@ -2251,8 +2287,12 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2020-01-25T06:09:39Z</date>
+	<date>2020-02-26T22:16:01Z</date>
 	<key>SUSendProfileInfo</key>
+	<false/>
+	<key>SUUpdateGroupIdentifier</key>
+	<integer>144656226</integer>
+	<key>SUUpdateRelaunchingMarker</key>
 	<false/>
 	<key>SavePasteHistory</key>
 	<false/>
@@ -2327,7 +2367,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.3.8beta5</string>
+	<string>3.3.10beta1</string>
 	<key>kCPKSelectionViewPreferredModeKey</key>
 	<integer>1</integer>
 	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>

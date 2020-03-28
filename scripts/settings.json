@@ -33,5 +33,6 @@
     "csharpfixformat.style.spaces.beforeParenthesis": false,
     "[csharp]": {
       "editor.defaultFormatter": "Leopotam.csharpfixformat"
-    }
+    },
+    "files.insertFinalNewline": true
   }

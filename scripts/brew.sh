@@ -34,7 +34,6 @@ brew install fish
 brew install fzf
 brew install git
 brew install less
-brew install neovim
 brew install node
 brew install openssh
 brew install python
